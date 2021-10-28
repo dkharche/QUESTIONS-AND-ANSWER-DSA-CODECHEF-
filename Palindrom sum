@@ -1,0 +1,78 @@
+Question--
+Sum of all N-digit palindromic numbers which does not contains 0 and are divisible by 9.
+------------------------------------------------------------------------------------------------
+
+c++ code
+
+
+#include <iostream>
+using namespace std;
+int MOD = 1000000007;
+
+
+int power( int a,int b)
+{
+
+	
+	if (b == 0)
+		return 1;
+
+
+   int temp = power(a, b / 2);
+
+	temp = (temp * temp) % MOD;
+
+	
+	if (b % 2 != 0) {
+		temp = (temp * a) % MOD;
+	}
+
+
+	return temp;
+}
+
+
+void palinsum(int N)
+{
+
+int sum = 0, res, ways;
+
+
+	if (N == 1) {
+		cout << "9" << endl;
+		return;
+	}
+
+	if (N == 2) {
+		cout << "99" << endl;
+		return;
+	}
+
+	ways = N / 2;
+
+
+	if (N % 2 == 0)
+		ways--;
+
+
+
+	res = power(9, ways - 1);
+
+	for (int i = 0; i < N; i++) {
+		sum = sum * 10 + 45 * res;
+		sum %= MOD;
+	}
+
+	
+	cout << sum << endl;
+}
+
+
+int main()
+{
+	int N;
+	cin>>N;
+	
+	palinsum(N);
+	return 0;
+}
