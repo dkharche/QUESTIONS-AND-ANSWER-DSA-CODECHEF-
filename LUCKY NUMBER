@@ -1,0 +1,37 @@
+Chef buys a lottery ticket that has a 3 digit code associated with it. He thinks that digit 7 is his lucky digit and brings him good luck. Chef will win some amount in the lottery if at least one of the digits of the lottery ticket is 7.
+Given three digits A, B, and C of the lottery ticket, tell whether Chef wins something or not?
+-----------------------------------------------------------------------------------------------------------
+C++ CODE
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int A, B, C;
+
+        cin >> A >> B >> C;
+        cout << endl;
+        vector<int> arr;
+
+        arr.push_back(A);
+        arr.push_back(B);
+        arr.push_back(C);
+
+        if (arr[0] == 7 || arr[1] == 7 || arr[2] == 7)
+        {
+            cout << "YES" << endl;
+        }
+
+        else
+        {
+            cout << "NO";
+        }
+    }
+	
+	return 0;
+}
