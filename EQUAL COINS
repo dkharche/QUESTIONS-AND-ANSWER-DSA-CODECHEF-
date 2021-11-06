@@ -1,0 +1,38 @@
+Chef has X coins worth 1 rupee each and Y coins worth 2 rupees each. He wants to distribute all of these X+Y coins to his two sons so that the total value of coins received by each of them is the same. Find out whether Chef will be able to do so.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+c++ code
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    int a = 1;
+    int b = 2;
+    int sum = 0;
+    int count = 0;
+
+    cin >> t;
+    while (t--)
+    {
+        int X, Y;
+        cin >> X >> Y;
+        if (X % 2 == 0 && Y % 2 == 0)
+        {
+            sum = a * (X / 2) + b * (Y / 2);
+            count = a * (X / 2) + b * (Y / 2);
+
+            if (sum == count)
+            {
+                cout << "yes" << endl;
+            }
+        }
+        else
+        {
+            cout << "No" << endl;
+        }
+    }
+
+    return 0;
+}
