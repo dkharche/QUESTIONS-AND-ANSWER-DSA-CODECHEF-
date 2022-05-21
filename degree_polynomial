@@ -21,6 +21,7 @@ int main()
     int t;
     int N;
     cin >> t;
+    int b=0;
 
     while (t--)
     {
@@ -31,19 +32,25 @@ int main()
         {
             cin >> a[i];
 
-            int len = sizeof(a) / sizeof(a[0]);
+            //int len = sizeof(a) / sizeof(a[0]);
 
-            if (len == N)
-            {
-                cout << len - 1 << endl;
-                break;
-            }
-            else if (a[N] == 0)
-            {
-                cout << N - 1;
-                break;
+            //if (len == N-1)
+           // {
+               
+            //}
+        }
+        for(int j=N-1;j>0;j--){
+                    if(a[j]!=0){
+                        b=j;
+                        
+                        break;
+                
             }
         }
+        cout<<b<<endl;
+        
+        
     }
     return 0;
+    
 }
