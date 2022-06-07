@@ -24,6 +24,7 @@ int main()
     int b=0;
 
     while (t--)
+    
     {
         cin >> N;
         int a[N];
